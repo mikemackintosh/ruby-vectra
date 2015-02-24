@@ -1,6 +1,6 @@
 require 'rspec/core'
 
-require File.join(File.dirname(__FILE__), '..', 'lib', 'slackdraft')
+require File.join(File.dirname(__FILE__), '..', 'lib', 'vectra')
 
 # Create the share API context
 # so we can pass stuff between
