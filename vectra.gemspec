@@ -10,11 +10,11 @@ Gem::Specification.new do |s|
   s.version     = Vectra::VERSION
   s.date        = '2015-02-23'
   s.summary     = "Vectra API Client"
-  s.description = "Vectra API Client"
+  s.description = "Easily interface with the Vectra API for consuming detections, threats and events"
   s.authors     = ["Mike Mackintosh"]
   s.email       = 'm@zyp.io'
   s.homepage    =
-    'http://github.com/mikemackintosh/vectra'
+    'http://github.com/mikemackintosh/ruby-vectra'
 
   s.license       = 'MIT'
   
