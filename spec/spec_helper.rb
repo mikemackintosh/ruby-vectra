@@ -10,7 +10,7 @@ RSpec.shared_context "shared environment", :a => :b do
   before(:all) do
 
     # Set webhook token
-    @slackhook = 'blahblahblah'
+    @vectra = 'blahblahblah'
 
   end
 

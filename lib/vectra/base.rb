@@ -5,7 +5,6 @@ module Vectra
 
     # Init the class
     def initialize(token, &block)
-    
       instance_eval(&block) if block_given?
     end
 
