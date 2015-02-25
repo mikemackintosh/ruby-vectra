@@ -7,6 +7,8 @@ require 'vectra/config'
 require 'vectra/api'
 require 'vectra/hosts'
 require 'vectra/detections'
+require 'vectra/sensors'
+require 'vectra/rules'
 
 module Vectra
 
