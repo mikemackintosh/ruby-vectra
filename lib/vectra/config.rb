@@ -3,7 +3,7 @@ module Vectra
     class RequiredOptionMissing < RuntimeError ; end
     extend self
 
-    attr_accessor :endpoint, :username, :password, :options
+    attr_accessor :endpoint, :username, :password
 
     # Configure vectra from a hash. This is usually called after parsing a
     # yaml config file such as vectra.yaml.
@@ -26,7 +26,7 @@ module Vectra
     #
     # @param [ String ] path The path to the file.
     def load!(path)
-      settings = YAML.load(ERB.new(File.new(path).read).result)[ENVIRONMENT]
+      settings = YAML.load(ERB.new(File.new(path).read).result)
       if settings.present?
         from_hash(settings)
       end
