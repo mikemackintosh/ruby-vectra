@@ -15,4 +15,12 @@ describe Vectra::Api, 'Configure' do
     puts Vectra::Hosts.all
   end
 
+  it 'gets all detections' do
+    puts Vectra::Detections.all
+  end
+
+  it 'gets detection by id' do
+    puts Vectra::Detections.get(95)
+  end
+
 end

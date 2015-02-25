@@ -6,9 +6,7 @@ require 'cgi'
 require 'vectra/config'
 require 'vectra/api'
 require 'vectra/hosts'
-
-class ErrorVectraResponse < Exception
-end
+require 'vectra/detections'
 
 module Vectra
 

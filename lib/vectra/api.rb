@@ -4,7 +4,7 @@ module Vectra
 
     include HTTParty
 
-    def self.send(url, args="")
+    def self.send(url, args="", decode)
       results = []
 
       # Send the request
@@ -23,8 +23,13 @@ module Vectra
       # Decode the response
       response = JSON.parse response.body
 
-      # Map responses
-      response['results'].map{|r| results.push(r)}
+      # Check if we should decode this response
+      if decode
+        # Map responses
+        response['results'].map{|r| results.push(r)}
+      else
+        results = response
+      end
 
       # If there is a next, respect it
       #unless response['next'].nil?
@@ -35,9 +40,9 @@ module Vectra
 
     end
 
-    def self.request
-      r = self.send("#{Vectra::Config.endpoint}#{self.target}")
-      puts r.inspect
+    def self.request(args="", decode=true)
+      r = self.send("#{Vectra::Config.endpoint}#{self.target}", args, decode)
+      r
     end
 
   end
