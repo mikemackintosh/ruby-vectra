@@ -9,8 +9,10 @@ RSpec.shared_context "shared environment", :a => :b do
 
   before(:all) do
 
-    # Set webhook token
-    @vectra = 'blahblahblah'
+    # Set endpoint details
+    @endpoint_url = 'https://10.200.10.88/api/'
+    @username = "api"
+    @password = "AbpdWjFFKuu3XVdKKXjMZbard3H"
 
   end
 

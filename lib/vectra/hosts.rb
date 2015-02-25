@@ -1,9 +1,14 @@
 module Vectra
   class Hosts < Api
-    fattr target: "/hosts"
+
+    attr_reader :name
+
+    def self.target
+      "hosts"
+    end
 
     def self.all
-      get 
+      request
     end
 
     def get_host

@@ -3,18 +3,16 @@ module Vectra
 
     include HTTParty
 
-    def initialize
-      puts "Here!"
-     
-      options = {
-        username: Vectra.config.username,
-        password: Vectra.config.password,
-        endpoint: Vectra.config.endpoint
-      }
-    end
+    def self.request
+      response = HTTParty.get( 
+        "#{Vectra::Config.endpoint}#{self.target}",
+        :verify => false, 
+        :basic_auth => { 
+          :username => Vectra::Config.username, 
+          :password => Vectra::Config.password
+      })
 
-    def request
-      puts self.target
+      puts response.inspect
     end
 
   end

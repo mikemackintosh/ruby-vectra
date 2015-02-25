@@ -27,9 +27,3 @@ module Vectra
   alias_method :config, :configure
 
 end
-
-Vectra.configure do |config|
-  config.username = "api"
-  config.password = "https://10.200.10.88/api/"
-  config.endpoint = "AbpdWjFFKuu3XVdKKXjMZbard3H"
-end
