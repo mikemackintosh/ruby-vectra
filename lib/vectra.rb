@@ -16,10 +16,15 @@ module Vectra
 
   def configure
     block_given? ? yield(Config) : Config
+    %w(username password endpoint).each do |key|
+      if Vectra::Config.instance_variable_get("@#{key}").nil?
+        raise Vectra::Config::RequiredOptionMissing,
+          "Configuration parameter missing: '#{key}'. " +
+          "Please add it to the Vectra.configure block"
+      end
+    end
   end
   alias_method :config, :configure
-
-  #self.api = Vectra::Api.new
 
 end
 

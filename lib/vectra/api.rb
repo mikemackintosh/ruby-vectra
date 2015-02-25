@@ -4,14 +4,8 @@ module Vectra
     include HTTParty
 
     def initialize
-      puts Vectra::Config.inspect
-      %w(username password endpoint).each do |key|
-        if Vectra::Config.instance_variable_get("@#{key}").nil?
-          raise Vectra::Config::RequiredOptionMissing,
-            "Configuration parameter missing: '#{key}'. " +
-            "Please add it to the Vectra.configure block"
-        end
-      end
+      puts "Here!"
+     
       options = {
         username: Vectra.config.username,
         password: Vectra.config.password,
