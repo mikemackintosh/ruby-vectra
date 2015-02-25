@@ -10,3 +10,7 @@ Like any other gem:
 ```shell
 gem install vectra
 ```
+
+# Features
+
+  - Supports Hosts and Detections
