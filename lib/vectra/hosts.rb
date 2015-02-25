@@ -11,8 +11,8 @@ module Vectra
       request
     end
 
-    def get_host
-
+    def self.get(id)
+      request("/#{id}", false)
     end
 
   end
