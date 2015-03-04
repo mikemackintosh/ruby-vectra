@@ -4,7 +4,7 @@ module Vectra
     attr_reader :name
 
     def self.target
-      "hosts"
+      "hosts?page_size=50000"
     end
 
     def self.all

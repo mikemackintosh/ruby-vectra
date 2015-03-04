@@ -9,7 +9,7 @@ module Vectra
 
       # Send the request
       response = HTTParty.get( 
-        "#{url}#{args}",
+        "#{url}#{args}?page_size=100000",
         :verify => false, # Vectra doesnt accept real certs yet
         :basic_auth => { 
           :username => Vectra::Config.username, 

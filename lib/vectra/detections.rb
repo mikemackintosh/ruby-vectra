@@ -4,7 +4,7 @@ module Vectra
     attr_reader :id
 
     def self.target
-      "detections"
+      "detections?page_size=50000"
     end
 
     def self.all
