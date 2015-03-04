@@ -1,6 +1,6 @@
 require File.join(File.dirname(__FILE__), '..', 'spec_helper')
 
-describe Vectra::Api, 'Configure' do
+describe Vectra::API, 'Configure' do
   include_context "shared environment"
 
   it 'configures correctly' do
@@ -11,12 +11,18 @@ describe Vectra::Api, 'Configure' do
     end
   end
 
-  it 'gets all hosts' do
-    puts Vectra::Hosts.all
-  end
+  # This WILL be costly
+  #it 'gets all hosts' do
+  #  hosts = Vectra::Hosts.all
+  #  puts hosts.count
+  #end
 
   it 'gets host by id' do
-    puts Vectra::Hosts.get(1)
+    puts Vectra::Hosts.get(1).inspect
+  end  
+
+  it 'gets host by link' do
+    puts Vectra::Hosts.get("http://blah/api/hosts/1").inspect
   end
 
   it 'gets all detections' do
@@ -25,6 +31,10 @@ describe Vectra::Api, 'Configure' do
 
   it 'gets detection by id' do
     puts Vectra::Detections.get(95)
+  end
+
+  it 'gets detection by id' do
+    puts Vectra::Detections.get("http://blah/api/detections/2").inspect
   end
 
 end

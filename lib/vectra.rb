@@ -23,7 +23,7 @@ module Vectra
           "Please add it to the Vectra.configure block"
       end
     end
+
   end
   alias_method :config, :configure
-
 end

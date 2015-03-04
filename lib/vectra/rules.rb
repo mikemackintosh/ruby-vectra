@@ -1,6 +1,6 @@
 module Vectra
-  class Rules < Api
-
+  class Rules
+    
     attr_reader :id
 
     def self.target

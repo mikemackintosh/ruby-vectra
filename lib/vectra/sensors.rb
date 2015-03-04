@@ -1,5 +1,5 @@
 module Vectra
-  class Sensors < Api
+  class Sensors
 
     attr_reader :id
 

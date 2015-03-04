@@ -1,18 +1,25 @@
 module Vectra
-  class Detections < Api
+  class Detections
 
-    attr_reader :id
-
-    def self.target
-      "detections?page_size=50000"
-    end
+    attr_accessor :target
+    @target = "/detections"
 
     def self.all
-      request
+      Vectra::API.pull(@target)
     end
 
+    def each
+      self.all.each do |host|
+        yield host
+      end
+    end 
+
     def self.get(id)
-      request("/#{id}", false)
+      unless id.is_a? Integer
+        id = id.split("/").last
+      end
+
+      Vectra::API.pull("#{@target}/#{id}")
     end
 
   end

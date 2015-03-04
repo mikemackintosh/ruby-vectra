@@ -14,30 +14,47 @@ gem install vectra
 
 Basic Block Configuration:
 
-    Vectra.configure do |config|
-      config.endpoint = @endpoint_url # https://vectra/api/
-      config.username = @username
-      config.password = @password
-    end
+```ruby
+Vectra.configure do |config|
+  config.endpoint = @endpoint_url
+  config.username = @username
+  config.password = @password
+end
+```
+
+**endpoint** should be your Vectra box URL, no need to add the `/api` suffix. If you include it, it won't break things either.
 
 ## Detections
 
-    Vectra::Detections.all
+To get all detections, use `#all`:
 
-or by ID
+```ruby
+Vectra::Detections.all
+```
 
-    Vectra::Detections.get(1)
+You can also get a detection by ID or by referencing the detection URL:
 
+```ruby
+Vectra::Detections.get(1)
+Vectra::Detections.get('https://vectra/detection/1')
+```
     
 ## Hosts
 
-    Vectra::Hosts.all
+Do not use `::Hosts.all` if you are in production. This will be very costly if you have more than 5,000 discovered hosts.
 
-or by ID
+Instead, pass a Host ID or URL:
 
-    Vectra::Hosts.get(1)
+```ruby
+Vectra::Hosts.get(1)
+```
 
+## Notes
 
-# Features
+Vectra uses a `next` parameter in their responses for pagination. Default pagination is `50`. This API client will follow the `next` pages.
 
-  - Supports Hosts and Detections
+Currently, all responses which contain arrays (hosts and detections) will be sorted in ASC order by ID.
+
+## Credit
+
+[Mike Mackintosh](http://www.mikemackintosh.com)
