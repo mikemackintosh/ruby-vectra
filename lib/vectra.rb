@@ -3,12 +3,21 @@ require 'json'
 require 'fattr'
 require 'cgi'
 
+# Config
 require 'vectra/config'
+
+# Core Functions
 require 'vectra/api'
 require 'vectra/hosts'
 require 'vectra/detections'
 require 'vectra/sensors'
 require 'vectra/rules'
+
+# Detection Sets
+require 'vectra/relayed_comms'
+require 'vectra/detection_details'
+require 'vectra/sqli'
+require 'vectra/dns'
 
 module Vectra
 
