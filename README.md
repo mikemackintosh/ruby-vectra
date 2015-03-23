@@ -1,8 +1,6 @@
 # Ruby Vectra
 A Ruby extension for interfacing with Vectra API.
 
-[![TravisCI](https://travis-ci.org/mikemackintosh/ruby-vectra.svg)](https://travis-ci.org/mikemackintosh/ruby-vectra)
-
 # Installation
 
 Like any other gem:
@@ -10,6 +8,24 @@ Like any other gem:
 ```shell
 gem install vectra
 ```
+
+# Testing
+
+Update `spec/spec_helper.rb` with the following details:
+
+```ruby
+# Set endpoint details
+@endpoint_url = 'https://vectra-appliance/api/'
+@username = "api"
+@password = "BLAH"
+```
+
+To run tests, run:
+
+```shell
+rake test
+```
+
 # Usage
 
 Basic Block Configuration:
